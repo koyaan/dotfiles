@@ -21,8 +21,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=20000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -175,9 +175,17 @@ if ! shopt -oq posix; then
   fi
 fi
 
+alias r2help="radare2 -q -c '?*~....' -"
+
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/code
 export VIRTUALENVWRAPPER_SCRIPT=/home/koyaan/.local/bin/virtualenvwrapper.sh
 source /home/koyaan/.local/bin/virtualenvwrapper_lazy.sh
 export PATH=/home/koyaan/Android/Sdk/platform-tools/:$PATH
 export PATH=/usr/local/go/bin:$PATH
+
+# user gems
+if which ruby >/dev/null && which gem >/dev/null; then
+    PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+
