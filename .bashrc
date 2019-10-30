@@ -10,8 +10,8 @@ esac
 
 #####
 # TODO if not in screen
-export TERM=xterm-color
-#export TERM=xterm-256color
+#export TERM=xterm-color
+export TERM=xterm-256color
 #####
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
