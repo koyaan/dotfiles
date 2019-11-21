@@ -10,8 +10,8 @@ esac
 
 #####
 # TODO if not in screen
-export TERM=xterm-color
-#export TERM=xterm-256color
+#export TERM=xterm-color
+export TERM=xterm-256color
 #####
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -181,8 +181,12 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/code
 export VIRTUALENVWRAPPER_SCRIPT=/home/koyaan/.local/bin/virtualenvwrapper.sh
 source /home/koyaan/.local/bin/virtualenvwrapper_lazy.sh
-export PATH=/home/koyaan/Android/Sdk/platform-tools/:$PATH
+export PATH=/home/koyaan/.yarn/bin:$PATH
+export PATH=/home/koyaan/Android/Sdk/platform-tools:$PATH
 export PATH=/usr/local/go/bin:$PATH
+
+#android stuff
+export PATH=/home/koyaan/Android/Sdk/build-tools/28.0.3:$PATH
 
 # user gems
 if which ruby >/dev/null && which gem >/dev/null; then
