@@ -1,3 +1,5 @@
 e scr.utf8=true
 e scr.utf8.curvy=true
+e scr.color=2
 eco monokai
+e cfg.fortunes = false

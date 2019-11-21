@@ -184,6 +184,10 @@ source /home/koyaan/.local/bin/virtualenvwrapper_lazy.sh
 export PATH=/home/koyaan/.yarn/bin:$PATH
 export PATH=/home/koyaan/Android/Sdk/platform-tools:$PATH
 export PATH=/usr/local/go/bin:$PATH
+export PATH=/home/koyaan/.cargo/bin:$PATH
+
+## pwninit
+alias pwninit="pwninit --template-path ~/dotfiles/pwn-template.py"
 
 #android stuff
 export PATH=/home/koyaan/Android/Sdk/build-tools/28.0.3:$PATH

@@ -2,11 +2,21 @@ backtick 1 2 2 hostname
 caption always "%{WB}%?%-Lw%?%{kw}%n*%f %t%?(%u)%?%{WB}%?%+Lw%?%{Wb}"
 hardstatus alwayslastline "%{= RY}%H %{BW} %l %{bW} %c %M %d%= (%1`) "
 startup_message       off
-defscrollback 5000
+defscrollback 10000
 vbell off
 # get sequences with 'showkey -a'
 #term "screen-256color"
-term "xterm-color"
+#term "xterm-256color"
+
+# allow bold colors - necessary for some reason
+#attrcolor b ".I"
+# tell screen how to set colors. AB = background, AF=foreground
+#termcapinfo xterm-256color 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+
+# hide vertical bars
+#rendition so =00
+# hide horizontal bars
+#caption string "%{03} "
 
 # for linux alt+arrow
 bindkey ^[[1;3A focus up
