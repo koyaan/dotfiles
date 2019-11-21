@@ -183,6 +183,10 @@ export VIRTUALENVWRAPPER_SCRIPT=/home/koyaan/.local/bin/virtualenvwrapper.sh
 source /home/koyaan/.local/bin/virtualenvwrapper_lazy.sh
 export PATH=/home/koyaan/Android/Sdk/platform-tools/:$PATH
 export PATH=/usr/local/go/bin:$PATH
+export PATH=/home/koyaan/.cargo/bin:$PATH
+
+## pwninit
+alias pwninit="pwninit --template-path ~/dotfiles/pwn-template.py"
 
 # user gems
 if which ruby >/dev/null && which gem >/dev/null; then
