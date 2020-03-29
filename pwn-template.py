@@ -57,5 +57,5 @@ def main():
     r.interactive()
 
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+main()
