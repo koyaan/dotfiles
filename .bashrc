@@ -184,7 +184,7 @@ source /home/koyaan/.local/bin/virtualenvwrapper_lazy.sh
 export PATH=/home/koyaan/Android/Sdk/platform-tools/:$PATH
 export PATH=/usr/local/go/bin:$PATH
 export PATH=/home/koyaan/.cargo/bin:$PATH
-
+export PATH="$HOME/.symfony/bin:$PATH"
 ## pwninit
 alias pwninit="pwninit --template-path ~/dotfiles/pwn-template.py"
 
@@ -192,4 +192,4 @@ alias pwninit="pwninit --template-path ~/dotfiles/pwn-template.py"
 if which ruby >/dev/null && which gem >/dev/null; then
     PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
-
+workon pwn4 # rly
