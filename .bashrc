@@ -178,22 +178,26 @@ fi
 alias r2help="radare2 -q -c '?*~....' -"
 
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/code
-export VIRTUALENVWRAPPER_SCRIPT=/home/koyaan/.local/bin/virtualenvwrapper.sh
-source /home/koyaan/.local/bin/virtualenvwrapper_lazy.sh
-export PATH=/home/koyaan/.yarn/bin:$PATH
-export PATH=/home/koyaan/Android/Sdk/platform-tools:$PATH
-export PATH=/usr/local/go/bin:$PATH
-export PATH=/home/koyaan/.cargo/bin:$PATH
-
+VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_SCRIPT=$HOME/.local/bin/virtualenvwrapper.sh
+source $HOME/.local/bin/virtualenvwrapper_lazy.sh
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
+#export PATH=/home/koyaan/Android/Sdk/platform-tools/:$PATH
+#export PATH=/usr/local/go/bin:$PATH
+#export PATH="$HOME/.symfony/bin:$PATH"
+export PATH="$HOME/code/r2trace/git/mx:$PATH"
 ## pwninit
 alias pwninit="pwninit --template-path ~/dotfiles/pwn-template.py"
-
-#android stuff
-export PATH=/home/koyaan/Android/Sdk/build-tools/28.0.3:$PATH
+alias vmwmount="sudo vmhgfs-fuse .host:/ /mnt/hgfs/ -o allow_other -o uid=1000"
 
 # user gems
 if which ruby >/dev/null && which gem >/dev/null; then
     PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
 
+export PATH="$PATH:/opt/riscv/bin"
+
+export PATH="$PATH:$HOME/vendor/gcc-arm/bin"
+export PATH="$PATH:${HOME}/code/vendor/depot_tools"
+workon pwn7

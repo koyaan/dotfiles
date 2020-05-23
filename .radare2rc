@@ -1,5 +1,11 @@
 e scr.utf8=true
 e scr.utf8.curvy=true
+e asm.trace=true
+e dbg.trace=true
+e dbg.verbose=false
+e asm.demangle=false
+e bin.demangle=false
 e scr.color=2
 eco monokai
-e cfg.fortunes = false
+e cfg.fortunes=false
+

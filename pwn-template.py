@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 from pwn import *
 from time import sleep
 import os
@@ -42,7 +43,7 @@ def conn():
     else:
         write_rr2(exe.file.name)
         write_r2s(exe.file.name)
-        command = " ".join(["gnome-terminal -- ","radare2", "-d", exe.file.name, "-i", "%s-script.r2" % exe.file.name, "-e", "dbg.profile=%s.rr2" % exe.file.name])
+        command = " ".join(["gnome-terminal -- ","radare2", "-i", "%s-script.r2" % exe.file.name, "-r", "%s.rr2" % exe.file.name, "-d", exe.file.name])
         os.system(command)
         sleep(3)
         
@@ -57,5 +58,6 @@ def main():
     r.interactive()
 
 
-#if __name__ == "__main__":
-main()
+if __name__ == "__main__":
+    main()
+
