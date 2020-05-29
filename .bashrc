@@ -187,6 +187,9 @@ export PATH=$HOME/.cargo/bin:$PATH
 #export PATH=/usr/local/go/bin:$PATH
 #export PATH="$HOME/.symfony/bin:$PATH"
 export PATH="$HOME/code/r2trace/git/mx:$PATH"
+export PATH="$HOME/.symfony/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+
 ## pwninit
 alias pwninit="pwninit --template-path ~/dotfiles/pwn-template.py"
 alias vmwmount="sudo vmhgfs-fuse .host:/ /mnt/hgfs/ -o allow_other -o uid=1000"
