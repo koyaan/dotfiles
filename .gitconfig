@@ -1,0 +1,5 @@
+[user]
+	email = armin.weihbold@gmail.com
+	name = Armin Weihbold
+[pull]
+	rebase = false

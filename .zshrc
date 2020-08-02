@@ -57,6 +57,12 @@ alias cp="cp -i"                                                # Confirm before
 alias df='df -h'                                                # Human-readable sizes
 alias free='free -m'                                            # Show sizes in MB
 alias gitu='git add . && git commit && git push'
+### custom aliases
+alias ls='ls --color=always'
+alias pwninit="pwninit --template-path ~/Documents/dotfiles/pwn-template.py"
+
+## custom PATH
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Theming section  
 autoload -U compinit colors zcalc
@@ -194,3 +200,7 @@ case $(basename "$(cat "/proc/$PPID/comm")") in
   		ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
     ;;
 esac
+
+# virtualenvwrapper 
+export WORKON_HOME=~/.virtualenvs
+source /usr/bin/virtualenvwrapper.sh
