@@ -8,4 +8,4 @@ e bin.demangle=false
 e scr.color=2
 eco monokai
 e cfg.fortunes=false
-
+e bin.cache=true

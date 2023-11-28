@@ -9,6 +9,8 @@ setopt nobeep                                                   # No beep
 setopt appendhistory                                            # Immediately append history instead of overwriting
 setopt histignorealldups                                        # If a new command is a duplicate, remove the older one
 setopt autocd                                                   # if only directory path is entered, cd there.
+setopt inc_append_history                                       # Appends every command to the history file once it is executed
+setopt share_history                                            # Reloads the history whenever you use it
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
@@ -18,10 +20,10 @@ zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 HISTFILE=~/.zhistory
-HISTSIZE=1000
-SAVEHIST=500
-#export EDITOR=/usr/bin/nano
-#export VISUAL=/usr/bin/nano
+HISTSIZE=20000
+SAVEHIST=5000
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
 WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
 
 
@@ -61,8 +63,16 @@ alias gitu='git add . && git commit && git push'
 alias ls='ls --color=always'
 alias pwninit="pwninit --template-path ~/Documents/dotfiles/pwn-template.py"
 
+
+# user gems
+if which ruby >/dev/null && which gem >/dev/null; then
+    export PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+
 ## custom PATH
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/Android/Sdk/platform-tools:$PATH"
+export PATH="$HOME/code/vendor/codeql:$PATH"
 
 # Theming section  
 autoload -U compinit colors zcalc
@@ -204,3 +214,10 @@ esac
 # virtualenvwrapper 
 export WORKON_HOME=~/.virtualenvs
 source /usr/bin/virtualenvwrapper.sh
+
+# emulate bash comment behaviour
+setopt INTERACTIVE_COMMENTS
+
+
+# watson convenience
+alias w="watson"

@@ -10,6 +10,6 @@ set softtabstop=4   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
 
 set hlsearch 
-
+syntax on
 command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
 

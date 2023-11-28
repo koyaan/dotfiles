@@ -43,6 +43,7 @@ def conn():
     else:
         write_rr2(exe.file.name)
         write_r2s(exe.file.name)
+        # command = " ".join(["tmux", "split-window", "-h", "radare2", "-i", "%s-script.r2" % exe.file.name, "-r", "%s.rr2" % exe.file.name, "-d", exe.file.name])
         command = " ".join(["gnome-terminal -- ","radare2", "-i", "%s-script.r2" % exe.file.name, "-r", "%s.rr2" % exe.file.name, "-d", exe.file.name])
         os.system(command)
         sleep(3)

@@ -3,3 +3,5 @@
 	name = Armin Weihbold
 [pull]
 	rebase = false
+[init]
+	defaultBranch = main
