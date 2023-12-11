@@ -1,11 +1,25 @@
+eco monokai
+
+# https://r2wiki.readthedocs.io/en/latest/options/e/values-that-e-can-modify/cfg/
+e cfg.fortunes=false
+#e cfg.debug=true # 
+
+# https://r2wiki.readthedocs.io/en/latest/options/e/values-that-e-can-modify/scr/
 e scr.utf8=true
 e scr.utf8.curvy=true
-e asm.trace=true
-e dbg.trace=true
-e dbg.verbose=false
-e asm.demangle=false
-e bin.demangle=false
-e scr.color=2
-eco monokai
-e cfg.fortunes=false
-e bin.cache=true
+e scr.color=2 # 16M colors
+
+# https://r2wiki.readthedocs.io/en/latest/options/e/values-that-e-can-modify/dbg/
+#e dbg.slow=1 # verbose reg display
+#e dbg.trace=true # ERROR: Cannot initialize the esil trace class
+#e dbg.bep # Break on entrypoint Default is loader
+
+# https://r2wiki.readthedocs.io/en/latest/options/e/values-that-e-can-modify/asm/
+e asm.trace=true 
+#e asm.describe=false #  Show opcode description
+#e asm.demangle=false #  Show demangled symbols in disasm Default is true
+
+# https://r2wiki.readthedocs.io/en/latest/options/e/values-that-e-can-modify/bin/
+e bin.relocs.apply=true
+#e bin.demangle=false
+#e bin.cache=true # this breaks debugging, not in docs anymore?
