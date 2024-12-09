@@ -43,13 +43,13 @@ def conn():
     else:
         write_rr2(exe.file.name)
         write_r2s(exe.file.name)
-        r2_command = f"radare2 -i {exe.file.name}-script.r2 -r {exe.file.name}.rr2 -d {exe.file.name}"
+        r2_command = f"radare2 -i {{exe.file.name}}-script.r2 -r {{exe.file.name}}.rr2 -d {{exe.file.name}}"
         if args.TMUX or "PWN_TMUX" in os.environ:
             # open in new tmux pane
-            command = f"tmux splitw -h -F '#{{pane_pid}}' -P '{r2_command}'"
+            command = f"tmux splitw -h -F '#{{{{pane_pid}}}}' -P '{{r2_command}}'"
         else:
             # open in new window
-            command = f"gnome-terminal -- {r2_command}"
+            command = f"gnome-terminal -- {{r2_command}}"
         os.system(command)
         sleep(2) # Wait for r2 to start up so we can connect
         
