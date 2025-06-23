@@ -20,6 +20,8 @@ e asm.trace=true
 #e asm.demangle=false #  Show demangled symbols in disasm Default is true
 
 # https://r2wiki.readthedocs.io/en/latest/options/e/values-that-e-can-modify/bin/
-e bin.relocs.apply=true
+#e bin.relocs.apply=true
 #e bin.demangle=false
 #e bin.cache=true # this breaks debugging, not in docs anymore?
+
+e dir.tmp=/tmp

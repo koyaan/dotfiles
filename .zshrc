@@ -73,7 +73,7 @@ fi
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/Android/Sdk/platform-tools:$PATH"
 export PATH="$HOME/code/vendor/codeql:$PATH"
-
+export PATH="$HOME/code/vendor/depot_tools:$PATH"
 # Theming section  
 autoload -U compinit colors zcalc
 compinit -d
@@ -203,7 +203,8 @@ case $(basename "$(cat "/proc/$PPID/comm")") in
 #  		ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 #     ;;
   *)
-        RPROMPT='$(git_prompt_string)'
+        # uncomment to enable git prompt string
+        # RPROMPT='$(git_prompt_string)'
 		# Use autosuggestion
 		source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 		ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
@@ -212,8 +213,8 @@ case $(basename "$(cat "/proc/$PPID/comm")") in
 esac
 
 # virtualenvwrapper 
-export WORKON_HOME=~/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
+#export WORKON_HOME=~/.virtualenvs
+#source /usr/bin/virtualenvwrapper.sh
 
 # emulate bash comment behaviour
 setopt INTERACTIVE_COMMENTS
@@ -221,3 +222,8 @@ setopt INTERACTIVE_COMMENTS
 
 # watson convenience
 alias w="watson"
+
+# make capslock escape
+xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+# foundry solidity stuffs
+export PATH="$PATH:$HOME/.foundry/bin"

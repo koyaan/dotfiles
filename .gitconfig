@@ -5,3 +5,14 @@
 	rebase = false
 [init]
 	defaultBranch = main
+[core]
+	sshCommand = ssh -i ~/.ssh/id_rsa_n -o IdentitiesOnly=yes
+	autocrlf = false
+	filemode = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[color]
+	ui = true
