@@ -224,6 +224,12 @@ setopt INTERACTIVE_COMMENTS
 alias w="watson"
 
 # make capslock escape
-xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+# if [[ -v XMODDED ]]; then 
+#     echo "already modded"
+# else
+# #    xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+#     export XMODDED=1
+# fi
+
 # foundry solidity stuffs
 export PATH="$PATH:$HOME/.foundry/bin"
