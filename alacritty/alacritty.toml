@@ -1,0 +1,17 @@
+[general]
+import = [ "~/.config/alacritty/themes/themes/rose_pine_moon.toml" ]
+
+[window]
+opacity = 0.5
+decorations = "None"
+
+[font]
+size = 12.5 
+normal = { family = "Noto Sans Mono", style = "Regular"}
+
+[keyboard]
+bindings = [
+    { key = "N", mods = "Control", action = "CreateNewWindow" },
+    { key = "H", mods = "Control", action = "Minimize" },
+    { key = "Enter", mods = "Control", action = "ToggleFullscreen" },
+]

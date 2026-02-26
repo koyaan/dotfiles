@@ -62,7 +62,7 @@ alias gitu='git add . && git commit && git push'
 ### custom aliases
 alias ls='ls --color=always'
 alias pwninit="pwninit --template-path ~/Documents/dotfiles/pwn-template.py"
-
+alias slopshell="python3 ~/code/SLOPshell/slopshell.py"
 
 # user gems
 if which ruby >/dev/null && which gem >/dev/null; then
@@ -233,3 +233,11 @@ alias w="watson"
 
 # foundry solidity stuffs
 export PATH="$PATH:$HOME/.foundry/bin"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/koyaan/.lmstudio/bin"
+# End of LM Studio CLI section
+export LOCAL=$(ifconfig tun0 2>/dev/null| grep "inet " | cut -d " " -f 10)
+
+export LS_COLORS="$(vivid generate rose-pine-moon)"
+#eval "$(dircolors ~/.dir_colors)"
